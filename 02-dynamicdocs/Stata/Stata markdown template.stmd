@@ -1,0 +1,16 @@
+# Dynamic Documents in Stata
+
+ Hello world!
+
+	sysuse auto, clear
+	sum weight
+	
+# Markdown in Stata
+
+ Write text without indentation
+
+```{s}
+	* Write stata code inside chunks
+	sum mpg
+```
+
