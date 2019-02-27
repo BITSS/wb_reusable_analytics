@@ -1,0 +1,17 @@
+\frametitle{Demo \#3: Look inside a half-way project (and collaborate!)}
+\protect\hypertarget{demo-3-look-inside-a-half-way-project-and-collaborate-1}{}
+
+1- Find the following repo: \texttt{github.com/fhoces/nber\_trends}.\\
+2- Fork it and clone it.\\
+3- Open it in your computer, look around and try to execute some
+parts.\\
+4- Generate random number like this:
+\texttt{num1\ =\ sample(20000,\ 1)}.\\
+5- Look the name and (imputed) gender of the author in row
+\texttt{num1}.\\
+6- Create the following line at the end of the script:
+\texttt{verification\ =\ (num1,\ author,\ gender,\ correct(1\ yes,\ 0\ no)\ )}.\\
+7- Save, commit, push and create a pull request.\\
+8- Feel free to look around create more contributions if you like. Happy
+to co-author.
+
