@@ -37,11 +37,11 @@
 	if `paths' {
 
 		* Tell Stata where to find the relevant programs	
-		whereis pdflatex 	"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe"
-		whereis pandoc 		"C:\Program Files\RStudio\bin\pandoc\pandoc.exe"
+		whereis pdflatex 			"ADD/PATH/HERE"
+		whereis pandoc 				"ADD/PATH/HERE"
 		
 		* Workshop folder
-		global	reusable_analytics	"C:\Users\wb501238\Documents\GitHub\wb_reusable_analytics\02-dynamicdocs\Stata"
+		global	reusable_analytics	"ADD/PATH/HERE/wb_reusable_analytics/02b-Stata-markdown"
 	}
 	
 /*******************************************************************************
@@ -54,8 +54,7 @@
 		//cd "${reusable_analytics}"
 		//copy https://www.stata-journal.com/production/sjlatex/stata.sty 	stata.sty
 		
-		markstat using "${reusable_analytics}/Stata markdown template", beamer
-		markstat using "${reusable_analytics}/Presentation/Markstat presentation", beamer strict
+		markstat using "${reusable_analytics}/Stata markdown template"
 	
 	}
 	
