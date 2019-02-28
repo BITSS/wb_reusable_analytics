@@ -55,7 +55,7 @@
 		//copy https://www.stata-journal.com/production/sjlatex/stata.sty 	stata.sty
 		
 		markstat using "${reusable_analytics}/Stata markdown template", beamer
-		markstat using "${reusable_analytics}/Presentation/Markstat presentation", beamer
+		markstat using "${reusable_analytics}/Presentation/Markstat presentation", beamer strict
 	
 	}
 	

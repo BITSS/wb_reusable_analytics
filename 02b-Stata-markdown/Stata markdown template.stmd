@@ -3,7 +3,6 @@
  Hello world!
 
 	sysuse auto, clear
-	sum weight
 	
 # Markdown in Stata
 
@@ -11,6 +10,5 @@
 
 ```{s}
 	* Write stata code inside chunks
-	sum mpg
 ```
 
