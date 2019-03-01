@@ -188,7 +188,7 @@ talk about undo here
 
 ## Demo #2: Branches and collaboration 
 
-5- Fork repo `github.com/BITSS/test2`, and clone it into your machine.  
+5- Fork repo [`github.com/fhoces/test2`](https://github.com/fhoces/test2_keep), and clone it into your machine.  
 6- Edit fields of name, and birth date.   
 7- Save, commit and push.   
 8- Create your first Pull Request.   
@@ -220,7 +220,8 @@ Description:
 2-  Fork it and clone it.    
 3-  Open it in your computer: `nber_trends.Rproj` (needs RStudio), look around and excecute up to the section (`Verifying gender [WORKSHOP SECTION]`).  
 4-  Generate random number like this: `num1 = sample(20000, 1)`.  
-5-  Look the name and (imputed) gender of the author in row `num1`. This is done by typing: `temp3[num1,c("name", "gender")]` in the console.   
+5-  Look the name and (imputed) gender of the author in row `num1`. This is done by typing:  
+`temp3[num1,c("name", "gender")]` in the console.   
 6-  Create the following line at the end of the script: `verification <- cbind(temp3[num1,c("name", "gender")], "rownum" = num1, "correct" = 1)`.  
 7-  Save, commit, push and create a pull request.  
 8-  Feel free to look around create more contributions if you like. Happy to co-author.   

@@ -9,7 +9,7 @@ RStudio), look around and excecute up to the section
 4- Generate random number like this:
 \texttt{num1\ =\ sample(20000,\ 1)}.\\
 5- Look the name and (imputed) gender of the author in row
-\texttt{num1}. This is done by typing:
+\texttt{num1}. This is done by typing:\\
 \texttt{temp3{[}num1,c("name",\ "gender"){]}} in the console.\\
 6- Create the following line at the end of the script:
 \texttt{verification\ \textless{}-\ cbind(temp3{[}num1,c("name",\ "gender"){]},\ "rownum"\ =\ num1,\ "correct"\ =\ 1)}.\\
