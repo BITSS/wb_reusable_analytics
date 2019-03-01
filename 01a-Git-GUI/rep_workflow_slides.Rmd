@@ -1,7 +1,7 @@
 ---
 title: 'Git for Non-Programmers'
-author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at <https://github.com/BITSS/RT2_LOSANGELES_2018>\n"
-date: "Los Angeles, September 2018"
+author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at \n|  <https://github.com/BITSS/wb_reusable_analytics>\n"
+date: "World Bank, \n March 2019"
 output:
   beamer_presentation:
     slide_level: 2
@@ -20,7 +20,7 @@ editor_options:
 [Buckheit \& Donoho, 1995](https://statweb.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf)
 
 ## Organizing Principles  
-Christensen, Miguel & Freese (2018)  
+Christensen, Miguel & Freese (Forthcoming)  
 
 1 - Use code (scripts), don't work by hand (Excel/spreadsheet).  
 2 - Consider not saving statistical output, and just saving the code and raw data that generates it.  
@@ -81,7 +81,7 @@ Begin with a logical file structure
 
 ## What is Github
 - Github is a company that provides two services (that we care of): 
-  - A web hosting service for all our files track with git (public free/private $ or free if academic).  
+  - A web hosting service for all our files track with git.  
   - A GUI software (Desktop App) that provides user friendly access to git.
 
 - Others hosting ss include: Bitbucket, GitLab, Gitkraken, etc. 
@@ -122,6 +122,11 @@ Begin with a logical file structure
 \centering
 
 \includegraphics[height=2.8in]{../Images/phdcomics.png}
+
+## Comparison of Workflows
+
+\hspace*{-0.35in}{\includegraphics[height=2.8in]{../Images/version_control_diagram.png}}
+
 
 ## Other reasons to use git
 
@@ -176,7 +181,7 @@ talk about undo here
 ## Demo #2: Branches and collaboration
 
 1- Create a branch from previus repo.  
-2- Add new content, commit a few times and merge.  
+2- Add new content, commit a few times.  
 3- Go back to main branch (master), observe file, merge.  
 4- Repeat 1-3 but now replace instead of adding content.    
  
@@ -213,10 +218,10 @@ Description:
 
 1-  Find the following repo: `github.com/fhoces/nber_trends`.   
 2-  Fork it and clone it.    
-3-  Open it in your computer, look around and try to execute some parts.  
+3-  Open it in your computer: `nber_trends.Rproj` (needs RStudio), look around and excecute up to the section (`Verifying gender [WORKSHOP SECTION]`).  
 4-  Generate random number like this: `num1 = sample(20000, 1)`.  
-5-  Look the name and (imputed) gender of the author in row `num1`.  
-6-  Create the following line at the end of the script: `verification = (num1, author, gender, correct(1 yes, 0 no) )`.  
+5-  Look the name and (imputed) gender of the author in row `num1`. This is done by typing: `temp3[num1,c("name", "gender")]` in the console.   
+6-  Create the following line at the end of the script: `verification <- cbind(temp3[num1,c("name", "gender")], "rownum" = num1, "correct" = 1)`.  
 7-  Save, commit, push and create a pull request.  
 8-  Feel free to look around create more contributions if you like. Happy to co-author.   
 
@@ -240,14 +245,11 @@ Some good habits:
 
 ## Want to learn more: 
 
-- Software Carpentry's [step-by-step tutorial (command line)](https://swcarpentry.github.io/git-novice/).  
-
-- [Garret Christensen's version of this tutorial](https://github.com/BITSS/RT2Amsterdam2018/blob/master/1-GitDemo.md). 
-
-- [Great 20 min intro to Git by Alice Bartlett](https://www.youtube.com/watch?v=eWxxfttcMts)  
+ - [Great 20 min intro to Git by Alice Bartlett](https://www.youtube.com/watch?v=eWxxfttcMts)  
 
 - [Great 2hr tutorial to Github by Jenny Bryan (git ninja)](https://www.rstudio.com/resources/videos/happy-git-and-gihub-for-the-user-tutorial/)  
 
-- Jenny Bryan's [Happy Git](http://happygitwithr.com/); [Documentation from Matthew Gentzkow Jesse Shapiro](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf); Karthik Ram's paper on [Git for Research](https://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7) 
+- Jenny Bryan's [Happy Git](http://happygitwithr.com/); [Documentation from Matthew Gentzkow and Jesse Shapiro](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf); Karthik Ram's paper on [Git for Research](https://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7) 
 
+- Software Carpentry's [step-by-step tutorial (command line)](https://swcarpentry.github.io/git-novice/). 
 

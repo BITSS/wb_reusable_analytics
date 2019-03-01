@@ -1,7 +1,7 @@
 ---
-title: "Dynamic Documents using Stata and R: Hands-On"
-author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at \n|  <https://github.com/BITSS/RT2_LOSANGELES_2018>\n"
-date: "RT2, Los Angeles \n September 2018"
+title: "Dynamic Documents using R: Hands-On"
+author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at \n|  <https://github.com/BITSS/wb_reusable_analytics>\n"
+date: "World Bank, \n March 2019"
 output:
   beamer_presentation:
     fig_caption: no
