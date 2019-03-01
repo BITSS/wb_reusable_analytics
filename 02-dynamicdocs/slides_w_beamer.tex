@@ -138,7 +138,7 @@
 BITSS\\
 -\\
 Slides at\\
-\hspace*{0.333em}\url{https://github.com/BITSS/RT2_LOSANGELES_2018}}
+\hspace*{0.333em}\url{https://github.com/BITSS/wb_reusable_analytics}}
 \date{World Bank, March 2019}
 
 \begin{document}
@@ -241,7 +241,7 @@ Markdown}\label{one-type-of-dynamic-document-r-markdown}}
 \begin{frame}{R Markdown}
 \protect\hypertarget{r-markdown}{}
 
-\includegraphics{../Images/RMarkdownOutputFormats.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{../Images/RMarkdownOutputFormats.png}
 
 \end{frame}
 
@@ -324,28 +324,6 @@ output.
 \hypertarget{practical-excercise-1}{%
 \section{Practical Excercise \#1}\label{practical-excercise-1}}
 
-\begin{frame}{Hands-on excercise: the birthday problem!}
-\protect\hypertarget{hands-on-excercise-the-birthday-problem}{}
-
-As an illustration lets write a report using the participants in this
-workshop to illustrate the famous
-\href{https://en.wikipedia.org/wiki/Birthday_problem}{birthday problem}.
-
-\begin{quote}
-What is the probability that at least two people this room share the
-same birthday?
-\end{quote}
-
-\begin{quote}
-There are 4 in this room.
-\end{quote}
-
-\begin{quote}
-Is it something like \(\frac{1}{365} \times 4=\) 0.011?
-\end{quote}
-
-\end{frame}
-
 \begin{frame}{Goals for excercise \#1}
 \protect\hypertarget{goals-for-excercise-1}{}
 
@@ -361,6 +339,28 @@ Is it something like \(\frac{1}{365} \times 4=\) 0.011?
 \textbf{Secondary Goal:}\\
 1 - Expose you to some R programming.\\
 2 - Entertain you with a fun problem.
+
+\end{frame}
+
+\begin{frame}{Hands-on excercise: the birthday problem!}
+\protect\hypertarget{hands-on-excercise-the-birthday-problem}{}
+
+As an illustration lets write a report using the participants in this
+workshop to illustrate the famous
+\href{https://en.wikipedia.org/wiki/Birthday_problem}{birthday problem}.
+
+\begin{quote}
+What is the probability that at least two people this room share the
+same birthday?
+\end{quote}
+
+\begin{quote}
+There are 14 in this room.
+\end{quote}
+
+\begin{quote}
+Is it something like \(\frac{1}{365} \times 14=\) 0.038?
+\end{quote}
 
 \end{frame}
 
@@ -384,7 +384,7 @@ brief description.
 
 Actually the math says otherwise: \begin{align} 
  1 -  p(n) &= 1 \times \left(1-\frac{1}{365}\right) \times \left(1-\frac{2}{365}\right) \times \cdots \times \left(1-\frac{n-1}{365}\right) \nonumber  \\  &= \frac{ 365 \times 364 \times \cdots \times (365-n+1) }{ 365^n } \nonumber \\ &= \frac{ 365! }{ 365^n (365-n)!} = \frac{n!\cdot\binom{365}{n}}{365^n}\\
-p(n= 4) &= 0.016  \nonumber
+p(n= 14) &= 0.223  \nonumber
 \end{align}
 
 \end{frame}
@@ -394,7 +394,7 @@ p(n= 4) &= 0.016  \nonumber
 \protect\hypertarget{code-for-the-math-3-dynamicdocsfirst_dd_solution.rmd}{}
 
 Not relevant to look at: just copy and paste lines 23-30 from the
-solutions into your dynamic document.
+solutions into your dynamic document (\texttt{first\_dd\_solution.Rmd}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -412,10 +412,10 @@ solutions into your dynamic document.
 \begin{frame}{Don't like math? Let's run a simple simulation!}
 \protect\hypertarget{dont-like-math-lets-run-a-simple-simulation}{}
 
-1 - Simulate 10,000 rooms with \(n = 4\) random birthdays, and store the
-results in matrix where each row represents a room.\\
+1 - Simulate 10,000 rooms with \(n = 14\) random birthdays, and store
+the results in matrix where each row represents a room.\\
 2 - For each room (row) compute the number of unique birthdays.\\
-3 - Compute the average number of times a room has 4 unique birthdays,
+3 - Compute the average number of times a room has 14 unique birthdays,
 across 10,000 simulations, and report the complement.
 
 \end{frame}
@@ -447,7 +447,7 @@ across 10,000 simulations, and report the complement.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.0181
+## [1] 0.2262
 \end{verbatim}
 
 \end{frame}
@@ -459,11 +459,11 @@ across 10,000 simulations, and report the complement.
 \tightlist
 \item
   Many people originally think of a prob \textasciitilde{}
-  \(\frac{1}{365} \times N =\) 0.011
+  \(\frac{1}{365} \times N =\) 0.038
 \item
-  However the true probability is of \(p(n= 4) = 0.016\)
+  However the true probability is of \(p(n= 14) = 0.223\)
 \item
-  And the simulated probability is of 0.0177
+  And the simulated probability is of 0.2311
 \end{itemize}
 
 \end{frame}
@@ -685,32 +685,6 @@ here goes the code
 
 \end{frame}
 
-\hypertarget{practical-excercise-3}{%
-\section{Practical Excercise \#3}\label{practical-excercise-3}}
-
-\begin{frame}[fragile]{Goals for excercise \#3}
-\protect\hypertarget{goals-for-excercise-3}{}
-
-\textbf{Primary Goals:}\\
-1 - Map the concepts of DD into Stata \texttt{dyndoc}.\\
-2 - Demonstrate how to execute a DD in Stata.
-
-\end{frame}
-
-\begin{frame}[fragile]{Hands-on excercise \#3: Stata and TIER}
-\protect\hypertarget{hands-on-excercise-3-stata-and-tier}{}
-
-1- Go to github.com and search \texttt{dyndoc\ tier} or click here:
-\href{https://github.com/dvorakt/TIER_exercises}{github.com/dvorakt/TIER\_exercises}.\\
-2- Download or clone the repo.\\
-3- Unzip it.\\
-4- Open Stata (15), set working directory, and type
-\texttt{dyndoc\ "filepath/dyndoc\_debt\_growth/debt\ and\ growth\ stata\ dyndoc.do",\ replace}\\
-5- Go to the folder and click in
-\texttt{debt\ and\ growth\ stata\ dyndoc.html}
-
-\end{frame}
-
 \begin{frame}[fragile]{Bonus truck: NBER Working Papers!}
 \protect\hypertarget{bonus-truck-nber-working-papers}{}
 
@@ -722,7 +696,7 @@ here goes the code
   Fork and clone the repo one more time:
   \href{https://github.com/fhoces/nber_trends}{github.com/fhoces/nber\_trends}
 \item
-  Now run the \texttt{.Rmd} file instead.
+  Now knit the \texttt{.Rmd} file instead.
 \end{itemize}
 
 \end{frame}

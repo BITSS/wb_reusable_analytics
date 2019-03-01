@@ -50,7 +50,7 @@ header-includes:
 
 
 ## R Markdown  
-![](../Images/RMarkdownOutputFormats.png)
+![](../Images/RMarkdownOutputFormats.png){ width=80% }
 
 ## Basic Structure
 
@@ -69,7 +69,7 @@ output: html_document
 ```  
 
 ```{r global pars, eval=TRUE, echo=FALSE, results='hide'}
-n.pers = 4
+n.pers = 14
 ```  
 
 
@@ -108,15 +108,6 @@ To write inline use only one Back-tick to open followed by an "r" and one to clo
 
 # Practical Excercise #1
 
-## Hands-on excercise: the birthday problem!
-
-As an illustration lets write a report using the participants in this workshop to illustrate the famous [birthday problem](https://en.wikipedia.org/wiki/Birthday_problem). 
-
->What is the probability that at least two people this room share the same birthday?
-
->There are `r n.pers` in this room. 
-
->Is it something like $\frac{1}{365} \times  `r n.pers`=$   `r round(1/365 * n.pers, 3)`?
 
 ## Goals for excercise #1  
 
@@ -131,6 +122,18 @@ As an illustration lets write a report using the participants in this workshop t
 **Secondary Goal:**    
 1 - Expose you to some R programming.   
 2 - Entertain you with a fun problem.  
+
+
+## Hands-on excercise: the birthday problem!
+
+As an illustration lets write a report using the participants in this workshop to illustrate the famous [birthday problem](https://en.wikipedia.org/wiki/Birthday_problem). 
+
+>What is the probability that at least two people this room share the same birthday?
+
+>There are `r n.pers` in this room. 
+
+>Is it something like $\frac{1}{365} \times  `r n.pers`=$   `r round(1/365 * n.pers, 3)`?
+
 
 ## Create a new RMarkdown File
 
@@ -149,7 +152,7 @@ p(n= `r n.pers`) &= `r  round(1 - factorial(n.pers) * choose(365,n.pers)/ 365^n.
 
 ## Code for the math (`/3-dynamicdocs/first_dd_solution.Rmd`)
 
-Not relevant to look at: just copy and paste lines 23-30 from the solutions into your dynamic document. 
+Not relevant to look at: just copy and paste lines 23-30 from the solutions into your dynamic document (`first_dd_solution.Rmd`). 
 
 ```{r math, eval=FALSE}
 \begin{align} 
@@ -301,29 +304,13 @@ here goes the code
 - Run the solutions version into multiple outputs.   
 - Compare document with original version of the code.   
 
-# Practical Excercise #3
-
-## Goals for excercise #3  
-
-**Primary Goals:**  
-1 - Map the concepts of DD into Stata `dyndoc`.  
-2 - Demonstrate how to execute a DD in Stata.  
-
-
-## Hands-on excercise #3: Stata and TIER
-1- Go to github.com and search `dyndoc tier` or click here: [github.com/dvorakt/TIER_exercises](https://github.com/dvorakt/TIER_exercises).   
-2- Download or clone the repo.   
-3- Unzip it.   
-4- Open Stata (15), set working directory, and type `dyndoc "filepath/dyndoc_debt_growth/debt and growth stata dyndoc.do", replace`  
-5- Go to the folder and click in `debt and growth stata dyndoc.html` 
-
 ## Bonus truck: NBER Working Papers!
 - Remeber the example from yesterday on the half bake analysis of NBER papers in github?
 
 - Fork and clone the repo one more time: 
 [github.com/fhoces/nber_trends](https://github.com/fhoces/nber_trends)
 
-- Now run the `.Rmd` file instead. 
+- Now knit the `.Rmd` file instead. 
 
 # Final Remarks & More Resources
 

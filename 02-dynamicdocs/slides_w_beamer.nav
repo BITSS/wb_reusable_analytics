@@ -39,10 +39,10 @@
 \headcommand {\sectionentry {3}{Practical Excercise \#1}{16}{Practical Excercise \#1}{0}}
 \headcommand {\slideentry {3}{0}{1}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {3}{0}{2}{17/17}{}{0}}
-\headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {3}{0}{3}{18/19}{}{0}}
-\headcommand {\beamer@framepages {18}{19}}
+\headcommand {\slideentry {3}{0}{2}{17/18}{}{0}}
+\headcommand {\beamer@framepages {17}{18}}
+\headcommand {\slideentry {3}{0}{3}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
 \headcommand {\slideentry {3}{0}{4}{20/20}{}{0}}
 \headcommand {\beamer@framepages {20}{20}}
 \headcommand {\slideentry {3}{0}{5}{21/21}{}{0}}
@@ -82,26 +82,17 @@
 \headcommand {\beamer@framepages {37}{37}}
 \headcommand {\slideentry {4}{0}{12}{38/38}{}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\beamer@sectionpages {26}{38}}
-\headcommand {\beamer@subsectionpages {26}{38}}
-\headcommand {\sectionentry {5}{Practical Excercise \#3}{39}{Practical Excercise \#3}{0}}
-\headcommand {\slideentry {5}{0}{1}{39/39}{}{0}}
+\headcommand {\slideentry {4}{0}{13}{39/39}{}{0}}
 \headcommand {\beamer@framepages {39}{39}}
-\headcommand {\slideentry {5}{0}{2}{40/40}{}{0}}
+\headcommand {\beamer@sectionpages {26}{39}}
+\headcommand {\beamer@subsectionpages {26}{39}}
+\headcommand {\sectionentry {5}{Final Remarks \& More Resources}{40}{Final Remarks \& More Resources}{0}}
+\headcommand {\slideentry {5}{0}{1}{40/40}{}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {5}{0}{3}{41/41}{}{0}}
+\headcommand {\slideentry {5}{0}{2}{41/41}{}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\slideentry {5}{0}{4}{42/42}{}{0}}
-\headcommand {\beamer@framepages {42}{42}}
-\headcommand {\beamer@sectionpages {39}{42}}
-\headcommand {\beamer@subsectionpages {39}{42}}
-\headcommand {\sectionentry {6}{Final Remarks \& More Resources}{43}{Final Remarks \& More Resources}{0}}
-\headcommand {\slideentry {6}{0}{1}{43/43}{}{0}}
-\headcommand {\beamer@framepages {43}{43}}
-\headcommand {\slideentry {6}{0}{2}{44/44}{}{0}}
-\headcommand {\beamer@framepages {44}{44}}
-\headcommand {\beamer@partpages {1}{44}}
-\headcommand {\beamer@subsectionpages {43}{44}}
-\headcommand {\beamer@sectionpages {43}{44}}
-\headcommand {\beamer@documentpages {44}}
-\headcommand {\gdef \inserttotalframenumber {42}}
+\headcommand {\beamer@partpages {1}{41}}
+\headcommand {\beamer@subsectionpages {40}{41}}
+\headcommand {\beamer@sectionpages {40}{41}}
+\headcommand {\beamer@documentpages {41}}
+\headcommand {\gdef \inserttotalframenumber {39}}
