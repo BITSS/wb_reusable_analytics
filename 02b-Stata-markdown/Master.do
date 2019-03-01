@@ -23,10 +23,14 @@
 	if `packages' {
 		
 		* Install markstat to use Stata markdown
-		ssc install markstat
+		ssc install markstat, replace
 
 		* Install whereis to make markstat work
-		ssc install whereis
+		ssc install whereis, replace
+		
+		* Install other commands we will use for this session
+		ssc install estout, replace
+		ssc install unique, replace
 		
 	}
 	

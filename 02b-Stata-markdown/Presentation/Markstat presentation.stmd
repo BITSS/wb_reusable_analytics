@@ -1,6 +1,6 @@
 % Dynamic Presentations in Stata using Markstat
 % Luiza Andrade
-% `s c(current_date)`
+% March 1, 2019
 
 ```{s/}
 	qui sysuse auto, clear
@@ -24,6 +24,16 @@
 	local domestic `r(N)'
 ```
 
+# Outline
+
+ 1. Dynamic documents 
+ 1. `markdown` and `markstat`
+ 1. `markstat` installation
+ 1. Including console output in documents
+ 1. Including graphs in documents
+ 1. Including tables in documents
+ 1. Including inline code in documents
+ 1. References and resources
 
 # Introduction
 
@@ -41,8 +51,7 @@
  Most tools for dynamic documents are created with *literate data analysis* in mind,
  where code and documentation being produced together to increase research transparency.
  
- + Why this matters for reproducible research
-
+ 
 # Introduction
 
 When to use dynamic documents?
@@ -68,6 +77,7 @@ Cons:
 # Introduction
 
  + There are a handful of options for dynamic documents in Stata
+ + You can find a review of different options [in this link](https://www.stata.com/meeting/oceania16/slides/rising-oceania16.pdf)
  + For this presentation, we will use [`markstat`](https://data.princeton.edu/stata/markdown/gettingStarted), as we believe it's the most general and user friendly
  + [texdoc](http://repec.sowi.unibe.ch/stata/texdoc/) is also a good option for LaTeX users
  + At the end of this presentation, you can find some material on the different tools for dynamic documents in Stata
@@ -85,15 +95,15 @@ Cons:
 
 **`markstat`**
 
-   (i) Reads the Stata markdown file
-   (ii) Separates (*tangles*) markdown and Stata code 
-   (iii) Runs each of them separately
-   (iv) Puts their outputs back together (*weaves*) into a single document in the format you choose
+   1. Reads the Stata markdown file
+   1. Separates (*tangles*) markdown and Stata code 
+   1. Runs each of them separately
+   1. Puts their outputs back together (*weaves*) into a single document in the format you choose
 
    
 # Introduction
 
-[`markdown`](https://daringfireball.net/projects/markdown/syntax)
+[**`markdown`**](https://daringfireball.net/projects/markdown/syntax)
 	
  + Lightweight markup language
  + Designed to be easily readable
@@ -206,7 +216,9 @@ In some systems, you will not be able to replace the PDF if it's open. There are
 
 # Including Stata code
 
-+ For more advanced options (that we will discuss soon), `strict` code block can be defined as follows:
++ You can also use fenced code blocks (as the one below)
++ They make the `.stmd` file harder to read, but allow you to use more advanced 
+options -- we'll see some examples soon
 
 ~~~
  Write text without indentation
@@ -221,7 +233,8 @@ In some systems, you will not be able to replace the PDF if it's open. There are
 
 ### Exercise 2:
 
-1. Add Stata code using a command that prints output to the Stata console to the second section of `Stata markdown template.stmd`.
+1. Under the second title in `Stata markdown template.stmd`, add Stata code 
+using a command that prints some output to the Stata window
 * `summarize`, `keep`, `gen` and `tab` are good examples
 1. Save the markdown file
 1. If you have a PDF open, close it
@@ -289,7 +302,10 @@ To include Stata graphs:
 
 + Depending on the type of document you are writing, you may want to only display the results of your code (tables, graphs, etc)
 + This is when using strict code blocks is useful
-+ To omit the Stata code from the document, type `{s/}` on the opening of your code chunk:
++ To omit the Stata code from the document, type `{s/}` on the opening of your code chunk
+
+
+# Omitting Stata code {.fragile}
 
 ~~~
 ```{s/}
@@ -318,6 +334,9 @@ To include Stata graphs:
 + Using `{s/}` will commit the code you used, but not it's output
 + To omit the output, simply run your code `quietly`
 
+
+# Omitting Stata output {.fragile}
+
 ~~~
 ```{s/}
     scatter weight length, ///
@@ -328,7 +347,7 @@ To include Stata graphs:
 ![Correlation between weight and length](scatter.png)
 ~~~
 
-# Omitting Stata output
+# Omitting Stata output {.fragile}
 
 ```{s/}
     scatter weight length, ///
@@ -341,7 +360,7 @@ To include Stata graphs:
 # Including Stata tables {.fragile}
 
 + To include estimation results, we recommend using `esttab`
-+ The window output of `esttab` is decently formatted, and including that output
++ The window output of `esttab` is well-formatted, and including that output
 is the simplest way to display a table
 + `esttab` also exports to HTML and TeX, but those are more advanced examples that are beyond the scope of this presentation
 + You can find more detailed examples in the [Stata Markdown website](https://data.princeton.edu/stata/markdown/examples)
@@ -441,10 +460,96 @@ models produced by `s `makes'` different companies
 are domestic
 ~~~
 
-# Other resources
+# Including code inline {.fragile}
 
-+ This presentation was mostly based on [German Rodriguez, 2017. "MARKSTAT: Stata module to support literate data analysis using Stata and Markdown," Statistical Software Components S458401, Boston College Department of Economics, revised 08 May 2018.](https://data.princeton.edu/stata/markdown/markstat.pdf)
-+ The [`markstat` website](https://data.princeton.edu/stata/markdown) contains a lot of material, examples and FAQs
-+ [texdoc](http://repec.sowi.unibe.ch/stata/texdoc/index.html) is another option to create dynamic documents in Stata
+ + Inline code is particularly useful when you want to display a custom table
+ + You can create the table using markdown, and add the numbers to the right columns using locals
+ + However, to create these you need to specify the `strict` option when compiling
+ + And they will not necessarily render will in all different formats
+ 
+# Including code inline {.fragile}
+
+ + Writing
+ 
+~~~
+| Car origin  | N obs        |
+|:------------|-------------:|
+| Domestic    |`s `domestic'`|
+| Foreign     |`s `foreign'` |
+~~~
+
+ + Will result in 
+ 
+| Car origin  | N obs        |
+|:------------|-------------:|
+| Domestic    |`s `domestic'`|
+| Foreign     |`s `foreign'` |
+
+
+# Adding a title to your document
+
+ + There are three pieces of metadata that you can easily add to your document: title, author and date
+ + You can do this by adding the following code to the beginning of your document:
+ 
+~~~
+% Document Title
+% Author
+% Date
+~~~
 
 # Other tools for dynamic documents in Stata
+
+ [**texdoc**](http://repec.sowi.unibe.ch/stata/texdoc/)
+ 
+ + Stata package created by Ben Jann
+ + Write LaTeX code instead of markdown
+ + Resulting document is not as easy to read
+ + But can be easier to format, if you know TeX well
+ + Debugging LaTeX errors can be hard
+
+# Other resources
+
+ + This presentation was mostly based on [German Rodriguez, 2017. "MARKSTAT: Stata module to support literate data analysis using Stata and Markdown," Statistical Software Components S458401, Boston College Department of Economics, revised 08 May 2018.](https://data.princeton.edu/stata/markdown/markstat.pdf)
+ + The [`markstat` website](https://data.princeton.edu/stata/markdown) contains a lot of material, examples and FAQs
+ + [texdoc](http://repec.sowi.unibe.ch/stata/texdoc/index.html) is another option to create dynamic documents in Stata
+
+
+# `datalibweb`
+
+ + **`datalibweb`** is a data system developed by the Global Poverty Team for Statistical Development of the World Bank
+ + Allows users to access raw and harmonized data sets collected across Global Practices
+ + Collections are maintained by regional statistics teams and kept up to date
+ + Version control of data sets
+ + Explore data set documentation
+ 
+ 
+# `datalibweb` installation
+
+ + In Stata, type 
+ 
+~~~
+net install datalibweb, ///
+	all replace force ///
+	from("http://eca/povdata/datalibweb/_ado")
+	
+datalibweb, update(ado)
+~~~
+
+# `datalibweb` usage
+
+Type `datalibweb` to explore the data sets:
+
+![datalibweb](img/datalibweb.png){width="85%"}\
+
+
+# `datalibweb` usage
+
+
+![datalibweb](img/datalibweb2.png){width="55%"}\
+
+
+# `datalibweb`
+
+For more information, go to FURL datalibweb 
+
+
