@@ -1,5 +1,5 @@
 # wb_reusable_analytics
-Repository for World Bank's Workshop on Reusable Analytics
+Repository for World Bank's Workshop on: Making Analytics Reusable
 
 
 - 10 AM - Opening remarks	- Umar Serajuddin (DECIS)   

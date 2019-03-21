@@ -1,0 +1,54 @@
+---
+title: "Reproducing figure form MHE"
+author: "Fernando Hoces de la Guardia"
+date: "3/1/2019"
+output: html_document
+---
+
+
+## Description  
+Our goal is to  reproduce figure 5.2.4 from MHE. Originally from [this paper](https://economics.mit.edu/files/11616)
+
+
+```{r raw-data, eval=TRUE, echo=TRUE, warning=FALSE, results='hide', message=FALSE}
+# R code for Figure 5-2-4            #
+# Required packages                  #
+# foreign: read Stata .dta files     #
+# lfe: run fixed effect regressions  #
+# ggplot2: plot results              #
+library(foreign)
+library(lfe)
+library(ggplot2)
+
+# Download the data and unzip it
+download.file('http://economics.mit.edu/~dautor/outsourcingatwill_table7.zip', 
+              'outsourcingatwill_table7.zip')
+unzip('outsourcingatwill_table7.zip')
+```
+
+
+## Data Cleaning  
+ Restrict our sample to 1979-1995 and delete Guam.   
+
+```{r data-cleaning}
+# Load the data
+autor <- read.dta('table7/autor-jole-2003.dta')
+
+# Log total employment: from BLS employment & earnings
+autor$lnemp <- log(autor$annemp)
+
+# Non-business-service sector employment from CBP
+autor$nonemp  <- autor$stateemp - autor$svcemp
+autor$lnnon   <- log(autor$nonemp)
+autor$svcfrac <- autor$svcemp / autor$nonemp
+
+# Total business services employment from CBP
+autor$bizemp <- autor$svcemp + autor$peremp
+autor$lnbiz  <- log(autor$bizemp)
+
+# Restrict sample
+autor <- autor[which(autor$year >= 79 & autor$year <= 95), ]
+autor <- autor[which(autor$state != 98), ]
+
+```
+
