@@ -15,3 +15,6 @@ Repository for World Bank's Workshop on: Making Analytics Reusable
 - 3:00 PM	Coffee break   
 - 3:15 PM	Project management using Github	Mireille Raad (Big Data/Data Collaboratives)  
 - 4:00	Workshop ends
+
+## Slides for Python Session
+[PDF Slides](https://drive.google.com/file/d/1zogXqG7pOJrweLOlZ6Ky-R1fDRSOa5vb/view?usp=sharing)
